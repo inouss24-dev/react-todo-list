@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { MdAddToPhotos } from "react-icons/md";
-import { TiDelete } from "react-icons/ti";
 
 function App() {
   const [input, setInput] = useState("");
@@ -47,20 +46,6 @@ function App() {
     setTasks(updatedTasks);
   };
 
-  const handleUpdate = (id, newTitle) => {
-    const updatedTasks = tasks.map((task) => {
-      if (task.id === id) {
-        return {
-          id: task.id,
-          title: newTitle,
-          date: task.date,
-        };
-      }
-      return task;
-    });
-    setTasks(updatedTasks);
-  };
-
   const handleClearAll = () => {
     setTasks([]);
   };
@@ -83,7 +68,7 @@ function App() {
             className="bg-blue-500 text-white font-medium p-4 rounded-md hover:bg-blue-600 transition"
             onClick={handleAddTaskBtn}
           >
-            <MdAddToPhotos className=" text-xl" />
+            Ajouter
           </button>
         </div>
         {tasks.map((task) => (
@@ -100,12 +85,6 @@ function App() {
               </span>
             </div>
             <div className="flex space-x-2">
-              <button
-                className="bg-green-500 text-white p-2 rounded-md hover:bg-green-600 transition flex items-center"
-                onClick={() => handleUpdate(task.id, input)}
-              >
-                Update
-              </button>
               <button
                 className="bg-red-500 text-white p-2 rounded-md hover:bg-red-600 transition flex items-center"
                 onClick={() => handleDelete(task.id)}

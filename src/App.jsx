@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { MdAddToPhotos } from "react-icons/md";
 
 function App() {
   const [input, setInput] = useState("");
@@ -51,21 +50,21 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="bg-white shadow-md rounded-lg w-full max-w-lg p-6">
-        <h1 className="text-4xl font-semibold text-center text-gray-800 mb-6">
-          🌄My Todo List✅
+    <div className="min-h-screen bg-gradient-to-r from-purple-700 via-pink-500 to-blue-500 flex items-center justify-center p-4">
+      <div className="bg-gray-800 shadow-xl rounded-lg w-full max-w-lg p-6 text-white">
+        <h1 className="text-4xl font-bold text-center mb-6 neon-text">
+          🌄 My Todo List ✅
         </h1>
         <div className="flex space-x-3 mb-6">
           <input
             type="text"
             placeholder="Enter Your Task👨‍💻 ... "
-            className="flex-1 border-2 border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="flex-1 border-2 border-purple-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-900"
             onChange={handleInput}
             value={input}
           />
           <button
-            className="bg-blue-500 text-white font-medium p-4 rounded-md hover:bg-blue-600 transition"
+            className="bg-indigo-600 text-white font-medium p-4 rounded-md hover:bg-indigo-700 transition"
             onClick={handleAddTaskBtn}
           >
             Ajouter
@@ -73,20 +72,20 @@ function App() {
         </div>
         {tasks.map((task) => (
           <div
-            className="flex items-center justify-between p-4 bg-gray-100 rounded-md mb-3 shadow-sm"
+            className="flex items-center justify-between p-4 bg-gray-700 rounded-md mb-3 shadow-md hover:shadow-xl transition"
             key={task.id}
           >
             <div className="flex-1">
-              <span className="block text-gray-800 font-medium">
+              <span className="block text-gray-300 font-medium">
                 {task.title}
               </span>
-              <span className="block text-sm text-gray-500">
+              <span className="block text-sm text-gray-400">
                 Created on: {task.date}
               </span>
             </div>
             <div className="flex space-x-2">
               <button
-                className="bg-red-500 text-white p-2 rounded-md hover:bg-red-600 transition flex items-center"
+                className="bg-red-600 text-white p-2 rounded-md hover:bg-red-700 transition flex items-center"
                 onClick={() => handleDelete(task.id)}
               >
                 Delete
@@ -96,7 +95,7 @@ function App() {
         ))}
         {tasks.length > 2 && (
           <button
-            className="bg-red-300 text-white p-3 rounded-md hover:bg-red-600 transition mt-6 w-full"
+            className="bg-pink-600 text-white p-3 rounded-md hover:bg-pink-700 transition mt-6 w-full"
             onClick={handleClearAll}
           >
             Clear All Tasks

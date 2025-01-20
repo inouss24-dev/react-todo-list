@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { MdAddToPhotos } from "react-icons/md";
 
 function App() {
   const [input, setInput] = useState("");
@@ -55,7 +56,7 @@ function App() {
         <h1 className="text-4xl font-bold text-center mb-6 neon-text">
           🌄 My Todo List ✅
         </h1>
-        <div className="flex space-x-3 mb-6">
+        <div className="flex flex-col sm:flex-row space-y-3 sm:space-x-3 sm:space-y-0 mb-6">
           <input
             type="text"
             placeholder="Enter Your Task👨‍💻 ... "
@@ -64,7 +65,7 @@ function App() {
             value={input}
           />
           <button
-            className="bg-indigo-600 text-white font-medium p-4 rounded-md hover:bg-indigo-700 transition"
+            className="bg-indigo-600 text-white font-medium p-4 rounded-md hover:bg-indigo-700 transition mt-3 sm:mt-0 sm:w-auto w-full"
             onClick={handleAddTaskBtn}
           >
             Ajouter
